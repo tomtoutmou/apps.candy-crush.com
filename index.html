@@ -1,57 +1,69 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Candy Crush Saga</title>
-    <link rel="icon" href="https://i.postimg.cc/1tvyf99y/favicon.png" type="image/png">
+    <meta name="viewport" content="width=786, height=891">
+    <title>Candy Crush Saga on Facebook</title>
+    <link rel="icon" href="https://i0.wp.com/centralblogs.com.br/wp-content/uploads/2019/03/facebook-logo-png2-1.png?w=696&ssl=1" type="image/png">
     <style>
         body {
             margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
-            width: 1743px; /* Largeur de la page */
-            height: 937px; /* Hauteur de la page */
-            overflow: hidden; /* Pour éviter tout débordement */
+            background-color: #eceff5;
         }
-
-        #header {
-            width: 100%;
-            text-align: center;
-            background-image: url('https://i.postimg.cc/8cysQRFB/Capture.png');
-            background-repeat: no-repeat;
-            background-size: contain;
-            height: 15px;
-        }
-
-        #banner {
-            background-color: #7ea822;
+        .toolbar {
+            background-color: #375a9b;
+            height: 60px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 80px;
+            padding: 0 10px;
         }
-
-        #banner img {
+        .toolbar img {
+            height: 40px;
+        }
+        .app-container {
+            width: 760px;
+            height: 831px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ccc;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+        .app-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .app-header img {
+            width: 50px;
             height: 50px;
+            margin-right: 10px;
         }
-
-        #game-frame {
+        .app-header h1 {
+            font-size: 18px;
+            margin: 0;
+            color: #333;
+        }
+        iframe {
             width: 100%;
-            height: 842px; /* Hauteur ajustée pour remplir l'espace restant */
+            height: 750px;
             border: none;
         }
     </style>
 </head>
 <body>
-
-    <div id="header"></div>
-
-    <div id="banner">
-        <img src="https://i.postimg.cc/66z8vXH2/king-logo-2.png" alt="King.com Logo">
+    <div class="toolbar">
+        <img src="https://i0.wp.com/centralblogs.com.br/wp-content/uploads/2019/03/logo-facebook-png4.png?w=696&ssl=1" alt="Facebook Logo">
     </div>
-
-    <iframe id="game-frame" src="https://candyflashserver.glitch.me/"></iframe>
-
+    <div class="app-container">
+        <div class="app-header">
+            <img src="https://gamingway.fr/wp-content/uploads/2012/04/candy-crush-saga-logo.jpg" alt="App Logo">
+            <h1>Candy Crush Saga on Facebook</h1>
+        </div>
+        <iframe src="http://candycrush.angrybirdschrome.serv00.net/"></iframe>
+    </div>
 </body>
 </html>
