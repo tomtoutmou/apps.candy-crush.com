@@ -1,69 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=786, height=891">
-    <title>Candy Crush Saga on Facebook</title>
-    <link rel="icon" href="https://i0.wp.com/centralblogs.com.br/wp-content/uploads/2019/03/facebook-logo-png2-1.png?w=696&ssl=1" type="image/png">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #eceff5;
-        }
-        .toolbar {
-            background-color: #375a9b;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            padding: 0 10px;
-        }
-        .toolbar img {
-            height: 40px;
-        }
-        .app-container {
-            width: 760px;
-            height: 831px;
-            margin: 20px auto;
-            background-color: white;
-            padding: 15px;
-            border: 1px solid #ccc;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-        }
-        .app-header {
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-        }
-        .app-header img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-        }
-        .app-header h1 {
-            font-size: 18px;
-            margin: 0;
-            color: #333;
-        }
-        iframe {
-            width: 100%;
-            height: 750px;
-            border: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Candy Crush sur Facebook</title>
+  <link rel="icon" type="image/png" href="https://spiritaccount.net/api/app_assets/?app_id=210831918949520&width=16&height=16&type=shortcut_icon">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      width: 100%;
+      height: 38px;
+      background: linear-gradient(to bottom, #466aa7, #224a91);
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    header img {
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    header .title-box {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .content {
+      display: flex;
+      margin-top: 38px;
+      height: calc(100vh - 38px);
+    }
+
+    .game-area {
+      flex: 1;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .sidebar {
+      width: 450px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .credits {
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+    }
+
+    .lang-btn {
+      background-color: #f0f0f0;
+      color: #333;
+      border: none;
+      padding: 8px 12px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+  </style>
 </head>
 <body>
-    <div class="toolbar">
-        <img src="https://i0.wp.com/centralblogs.com.br/wp-content/uploads/2019/03/logo-facebook-png4.png?w=696&ssl=1" alt="Facebook Logo">
+  <header>
+    <img src="https://i.postimg.cc/W4ytmq6y/fb.png" alt="Facebook logo">
+    <div class="title-box" id="game-title">Vous jouez à Candy Crush Saga</div>
+  </header>
+
+  <div class="content">
+    <div class="game-area">
+      <iframe src="https://candycrush.spiritaccount.net/fb2"></iframe>
     </div>
-    <div class="app-container">
-        <div class="app-header">
-            <img src="https://gamingway.fr/wp-content/uploads/2012/04/candy-crush-saga-logo.jpg" alt="App Logo">
-            <h1>Candy Crush Saga on Facebook</h1>
-        </div>
-        <iframe src="http://candycrush.angrybirdschrome.serv00.net/"></iframe>
+
+    <div class="sidebar">
+      <div class="credits">
+        &copy; 2025 Candy Crush Saga & Facebook<br><br>
+        <button class="lang-btn" onclick="setLanguage('fr')">Français</button>
+        <button class="lang-btn" onclick="setLanguage('he')">עברית</button>
+        <button class="lang-btn" onclick="setLanguage('gr')">Gerlandais</button>
+      </div>
     </div>
+  </div>
+
+  <script>
+    const translations = {
+      fr: "Vous jouez à Candy Crush Saga",
+      he: "אתה משחק ב-Candy Crush Saga",
+      gr: "Sie pelaatte Candy Crush Sagassa / Vous jouez à Candy Crush Saga / Jullie spelen Candy Crush Saga"
+    };
+
+    function setLanguage(lang) {
+      document.getElementById("game-title").innerText = translations[lang] || translations.fr;
+    }
+  </script>
 </body>
 </html>
+
