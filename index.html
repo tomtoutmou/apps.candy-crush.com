@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Candy Crush sur Facebook</title>
-  <link rel="icon" type="image/png" href="https://spiritaccount.net/api/app_assets/?app_id=210831918949520&width=16&height=16&type=shortcut_icon">
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/ZqWqgJJ2/favicon-1.png">
   <style>
     * {
       box-sizing: border-box;
@@ -22,7 +22,7 @@
     header {
       width: 100%;
       height: 38px;
-      background: linear-gradient(to bottom, #466aa7, #224a91);
+      background: #345a98;
       display: flex;
       align-items: center;
       padding-left: 10px;
@@ -52,12 +52,21 @@
 
     .game-area {
       flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      flex-direction: column;
     }
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+    .game-window {
+      width: 1061px;
+      height: 914px;
+      background: #ffffff;
+    }
+
+    .king-logo {
+      margin-bottom: 10px;
     }
 
     .sidebar {
@@ -87,17 +96,30 @@
       border-radius: 4px;
       font-size: 12px;
     }
+
+    @media (max-width: 1400px) {
+      .game-window {
+        transform: scale(0.8);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .game-window {
+        transform: scale(0.6);
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://i.postimg.cc/W4ytmq6y/fb.png" alt="Facebook logo">
+    <img src="https://i.postimg.cc/g0qJLttg/facebook-ge.png" alt="Facebook logo">
     <div class="title-box" id="game-title">Vous jouez à Candy Crush Saga</div>
   </header>
 
   <div class="content">
     <div class="game-area">
-      <iframe src="https://candycrush.spiritaccount.net/fb2"></iframe>
+      <img class="king-logo" src="https://i.postimg.cc/66z8vXH2/king-logo-2.png" alt="King Logo">
+      <embed class="game-window" src="https://6games.eu/files/file/CandyCrushSagaAS3v2WG.swf?ibpro_gameid=11384&arcadegid=11384" type="application/x-shockwave-flash">
     </div>
 
     <div class="sidebar">
@@ -123,4 +145,3 @@
   </script>
 </body>
 </html>
-
